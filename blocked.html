@@ -18,27 +18,60 @@
         }
 
         .blocked-container {
-            max-width: 600px;
-            padding: 40px;
+            max-width: 700px;
+            padding: 50px;
             background-color: #2a2a2a;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-in-out;
         }
 
         h1 {
             color: #f44336;
+            font-size: 2.5em;
             margin-bottom: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            animation: textGlow 1s ease-in-out infinite alternate;
+        }
+
+        p {
+            font-size: 1.3em;
+            margin: 20px 0;
+            color: #cccccc;
         }
 
         .quote {
-            font-size: 1.2em;
-            margin: 20px 0;
+            font-size: 1.5em;
+            margin: 30px 0;
             font-style: italic;
             color: #4CAF50;
         }
 
         .author {
+            font-size: 1.1em;
             color: #888;
+            margin-top: 15px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes textGlow {
+            from {
+                text-shadow: 0 0 8px rgba(244, 67, 54, 0.8);
+            }
+            to {
+                text-shadow: 0 0 16px rgba(244, 67, 54, 1);
+            }
         }
     </style>
 </head>
@@ -46,8 +79,8 @@
     <div class="blocked-container">
         <h1>Website Blocked</h1>
         <p>This website has been blocked to help you stay focused.</p>
-        <div class="quote" id="quote"></div>
-        <div class="author" id="author"></div>
+        <div class="quote" id="quote">"Focus on what truly matters."</div>
+        <div class="author" id="author">- Unknown</div>
     </div>
     <script src="blocked.js"></script>
 </body>

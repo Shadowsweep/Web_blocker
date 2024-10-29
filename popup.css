@@ -10,6 +10,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 h1, h2 {
@@ -25,25 +29,45 @@ h1, h2 {
 }
 
 input[type="url"] {
-    padding: 8px 12px;
-    border: 1px solid #333;
-    border-radius: 4px;
-    background-color: #2a2a2a;
-    color: #ffffff;
+    padding: 20px ;            /* Increased padding for a larger input area */
+    border: 1px solid #333;        /* Border color */
+    border-radius: 8px;            /* Rounded corners for a modern look */
+    background-color: #2a2a2a;     /* Dark background color */
+    color: #ffffff;                /* Text color */
+    font-family: 'Poppins', sans-serif; /* Font style */
+    font-size: 16px;               /* Increased font size for readability */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition effects */
 }
 
+input[type="url"]:focus {
+    border-color: #4CAF50;         /* Highlight border color on focus */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); /* Subtle shadow for focus */
+    outline: none;                 /* Remove default outline */
+}
+
+
 button {
-    padding: 8px 16px;
+    padding: 10px 16px;
     border: none;
     border-radius: 4px;
     background-color: #4CAF50;
     color: white;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
     background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+#addWebsite {
+    background-color: #007bff;
+}
+
+#addWebsite:hover {
+    background-color: #0069d9;
 }
 
 #removeSelected {
@@ -62,7 +86,7 @@ button:hover {
 
 .dropdown-toggle {
     width: 100%;
-    padding: 8px 12px;
+    padding: 10px 12px;
     background-color: #2a2a2a;
     border: 1px solid #333;
     border-radius: 4px;
@@ -71,6 +95,11 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: background-color 0.3s;
+}
+
+.dropdown-toggle:hover {
+    background-color: #333;
 }
 
 .dropdown-toggle:after {
@@ -82,6 +111,12 @@ button:hover {
 .dropdown-content {
     display: none;
     width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    background-color: #2a2a2a;
+    border-radius: 4px;
+    border: 1px solid #333;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-content.show {
@@ -110,8 +145,10 @@ button:hover {
 .action-buttons {
     display: none;
     margin-top: 8px;
+    gap: 10px;
 }
 
 .action-buttons.show {
-    display: block;
+    display: flex;
+    justify-content: space-between;
 }
